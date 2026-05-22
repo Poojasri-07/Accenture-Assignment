@@ -1,0 +1,1358 @@
+db.employees.insertMany([
+{
+	'name': "Jastib Bos",
+	'email': "bos@gmail.com",
+	'phone': 1242343,
+	'salary': 500
+},
+{
+	'name': "Jone Sina",
+	'email': "sina@gmail.com",
+	'phone': 1242343,
+	'salary': 600
+},
+{
+	'name': "Another Name",
+	'email': "another@gmail.com",
+	'phone': 1242343,
+	'salary': 200
+},
+{
+	'name': "Nice Guy",
+	'email': "nice@gmail.com",
+	'phone': 1242343,
+	'salary': 1000
+},
+{
+	'name': "Jone Jos",
+	'email': "jos@gmail.com",
+	'phone': 1242343,
+	'salary': 800
+},
+{
+	'name': "Jone Sarma",
+	'email': "sharma@gmail.com",
+	'phone': 1242343,
+	'salary': 150
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a0fd1f8641c70a2db4cdec7'),
+    '1': ObjectId('6a0fd1f8641c70a2db4cdec8'),
+    '2': ObjectId('6a0fd1f8641c70a2db4cdec9'),
+    '3': ObjectId('6a0fd1f8641c70a2db4cdeca'),
+    '4': ObjectId('6a0fd1f8641c70a2db4cdecb'),
+    '5': ObjectId('6a0fd1f8641c70a2db4cdecc')
+  }
+}
+db.employees.find()
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+show collections()
+MongoshInvalidInputError: [COMMON-10001] 'collections()' is not a valid argument for "show".
+show collections
+employees
+db.employees.findOne({email:"sharma@gmail.com"})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({phone:1242343})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({salary:{$gt:200}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+db.employees.find({salary:{$gte:500}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+db.employees.find({salary:{$gte:50}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({salary:{$ne:50}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({salary:{$ne:500}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({salary:{$nin:500,600,800}})
+SyntaxError: Unexpected token (1:39)
+
+> 1 | db.employees.find({salary:{$nin:500,600,800}})
+    |                                        ^
+db.employees.find({salary:{$nin:[500,600,800]}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({$and:[{salary:500},{email:"sharma@gmail.com"}]})
+db.employees.find({$and:[{salary:150},{email:"sharma@gmail.com"}]})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+db.employees.find({$or:[{salary:500},{email:"sharma@gmail.com"}]})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+//salary>500 and salary<1000
+db.employees.find({$and:[{salary:{$gt:500}},{salary:{$lt:1000}}]})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+//find where salary not >500
+db.find.employees(salary:{$not:{$gt:500}})
+SyntaxError: Unexpected token, expected "," (2:24)
+
+  1 | //find where salary not >500
+> 2 | db.find.employees(salary:{$not:{$gt:500}})
+    |                         ^
+//find where salary not >500
+db.find.employees({salary:{$not:{$gt:500}}})
+TypeError: db.find.employees is not a function
+//find where salary not >500
+db.employess.find({salary:{$not:{$gt:500}}})
+//find where salary not >500
+db.employees.find({salary:{$not:{$gt:500}}})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Jastib Bos',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1242343,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1242343,
+  salary: 150
+}
+//update by ID
+db.employees.updateOne({_id:ObjectId('6a0fd1f8641c70a2db4cdec7')},{$set:name:"Pooja"{}})
+SyntaxError: Unexpected token, expected "," (2:76)
+
+  1 | //update by ID
+> 2 | db.employees.updateOne({_id:ObjectId('6a0fd1f8641c70a2db4cdec7')},{$set:name:"Pooja"{}})
+    |                                                                             ^
+//update by ID
+db.employees.updateOne({_id:ObjectId('6a0fd1f8641c70a2db4cdec7')},{$set:name:"Pooja"}})
+SyntaxError: Unexpected token, expected "," (2:76)
+
+  1 | //update by ID
+> 2 | db.employees.updateOne({_id:ObjectId('6a0fd1f8641c70a2db4cdec7')},{$set:name:"Pooja"}})
+    |                                                                             ^
+//update by ID
+db.employees.updateOne({_id:ObjectId("6a0fd1f8641c70a2db4cdec7")},{$set:name:"Pooja"}})
+SyntaxError: Unexpected token, expected "," (2:76)
+
+  1 | //update by ID
+> 2 | db.employees.updateOne({_id:ObjectId("6a0fd1f8641c70a2db4cdec7")},{$set:name:"Pooja"}})
+    |                                                                             ^
+//update by ID
+db.employees.updateOne({_id:ObjectId("6a0fd1f8641c70a2db4cdec7")},{$set:{name:"Pooja"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.employees.find({name:"Pooja"})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Pooja',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+db.employees.updateMany({salary:{$lt:500}},{$set:{phone:1234567890}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.employees.find()
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec7'),
+  name: 'Pooja',
+  email: 'bos@gmail.com',
+  phone: 1242343,
+  salary: 500
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1234567890,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1234567890,
+  salary: 150
+}
+db.employees.find({phone:1234567890})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1234567890,
+  salary: 200
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1234567890,
+  salary: 150
+}
+db.employees.findOneAndReplace(
+  {_id:ObjectId("6a0fd1f8641c70a2db4cdec9")},
+  {name:"Tamim Iqbal",email:"tamim@gmail.com",phone:123456789,salary:500}
+SyntaxError: Unexpected token, expected "," (3:73)
+
+  1 | db.employees.findOneAndReplace(
+  2 |   {_id:ObjectId("6a0fd1f8641c70a2db4cdec9")},
+> 3 |   {name:"Tamim Iqbal",email:"tamim@gmail.com",phone:123456789,salary:500}
+    |                                                                          ^
+db.employees.findOneAndReplace(
+  {_id:ObjectId("6a0fd1f8641c70a2db4cdec9")},
+  {name:"Tamim Iqbal",email:"tamim@gmail.com",phone:123456789,salary:500})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Another Name',
+  email: 'another@gmail.com',
+  phone: 1234567890,
+  salary: 200
+}
+db.employees.find({name:"Tamim Iqbal"})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec9'),
+  name: 'Tamim Iqbal',
+  email: 'tamim@gmail.com',
+  phone: 123456789,
+  salary: 500
+}
+db.employees.deleteOne({email:"tamim@gmail.com"})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.employees.find({name:"Tamim Iqbal"})
+db.employees.deleteOne({salary:{$lt:800}})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.employees.find{},{name:1,email:1,_id:0}
+SyntaxError: Missing semicolon. (1:17)
+
+> 1 | db.employees.find{},{name:1,email:1,_id:0}
+    |                  ^
+db.employees.find({},{name:1,email:1,_id:0})
+{
+  name: 'Jone Sina',
+  email: 'sina@gmail.com'
+}
+{
+  name: 'Nice Guy',
+  email: 'nice@gmail.com'
+}
+{
+  name: 'Jone Jos',
+  email: 'jos@gmail.com'
+}
+{
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com'
+}
+db.empll
+day2.empll
+.db.employees.find().sort({salary:-1})
+SyntaxError: Unexpected token (1:0)
+
+> 1 | .db.employees.find().sort({salary:-1})
+    | ^
+.db.employees.find().sort({salary:1})
+SyntaxError: Unexpected token (1:0)
+
+> 1 | .db.employees.find().sort({salary:1})
+    | ^
+db.employees.find().sort({salary:1})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1234567890,
+  salary: 150
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+db.employees.find().sort({salary:-1})
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdeca'),
+  name: 'Nice Guy',
+  email: 'nice@gmail.com',
+  phone: 1242343,
+  salary: 1000
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecb'),
+  name: 'Jone Jos',
+  email: 'jos@gmail.com',
+  phone: 1242343,
+  salary: 800
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdec8'),
+  name: 'Jone Sina',
+  email: 'sina@gmail.com',
+  phone: 1242343,
+  salary: 600
+}
+{
+  _id: ObjectId('6a0fd1f8641c70a2db4cdecc'),
+  name: 'Jone Sarma',
+  email: 'sharma@gmail.com',
+  phone: 1234567890,
+  salary: 150
+}
+db.createCollection("products")
+{ ok: 1 }
+db.products.insertMany([
+{
+ name: "iPhone 14",
+ category: "Electronics",
+ price: 75000,
+ stock: 25,
+ brand: "Apple"
+},
+{
+ name: "Samsung Galaxy S22",
+ category: "Electronics",
+ price: 65000,
+ stock: 30,
+ brand: "Samsung"
+},
+{
+ name: "Dell Laptop",
+ category: "Computers",
+ price: 55000,
+ stock: 15,
+ brand: "Dell"
+},
+{
+ name: "HP Pavilion Laptop",
+ category: "Computers",
+ price: 50000,
+ stock: 12,
+ brand: "HP"
+},
+  {
+ name: "Nike Shoes",
+ category: "Fashion",
+ price: 5000,
+ stock: 50,
+ brand: "Nike"
+},
+{
+ name: "Adidas T-shirt",
+ category: "Fashion",
+ price: 1500,
+ stock: 80,
+ brand: "Adidas"
+},
+{
+ name: "Sony Headphones",
+ category: "Electronics",
+ price: 3000,
+ stock: 40,
+ brand: "Sony"
+},
+  {
+ name: "Wooden Dining Table",
+ category: "Furniture",
+ price: 20000,
+ stock: 5,
+ brand: "IKEA"
+},
+{
+ name: "Office Chair",
+ category: "Furniture",
+ price: 7000,
+ stock: 20,
+ brand: "Godrej"
+},
+  {
+ name: "Bluetooth Speaker",
+ category: "Electronics",
+ price: 2500,
+ stock: 60,
+ brand: "JBL"
+}
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a0fe968641c70a2db4cdecd'),
+    '1': ObjectId('6a0fe968641c70a2db4cdece'),
+    '2': ObjectId('6a0fe968641c70a2db4cdecf'),
+    '3': ObjectId('6a0fe968641c70a2db4cded0'),
+    '4': ObjectId('6a0fe968641c70a2db4cded1'),
+    '5': ObjectId('6a0fe968641c70a2db4cded2'),
+    '6': ObjectId('6a0fe968641c70a2db4cded3'),
+    '7': ObjectId('6a0fe968641c70a2db4cded4'),
+    '8': ObjectId('6a0fe968641c70a2db4cded5'),
+    '9': ObjectId('6a0fe968641c70a2db4cded6')
+  }
+}
+db.products.find({category:"Electronics"})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$lt:5000}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded2'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$lte:5000}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded1'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded2'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$gt:5000}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecf'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded0'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded4'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded5'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({price:{$gte:5000}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecf'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded0'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded1'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded4'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded5'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+db.products.find({price:{$ne:5000}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecf'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded0'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded2'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded4'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded5'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$nin:[1000,2000,5000]}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecf'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded0'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded2'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded4'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded5'),
+  name: 'Office Chair',
+  category: 'Furniture',
+  price: 7000,
+  stock: 20,
+  brand: 'Godrej'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({price:{$in:[1000,2000,5000]}})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded1'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+db.products.find({$and:{category:"Electronics"},{price:5000}})
+SyntaxError: Unexpected token (1:48)
+
+> 1 | db.products.find({$and:{category:"Electronics"},{price:5000}})
+    |                                                 ^
+db.products.find({$and:[{category:"Electronics"},{price:5000}]})
+db.products.find({category:"electronics",price:"5000"})
+db.products.find({$or:[{category:"Electronics"},{price:5000}]})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded1'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({$or:[{category:"Electronics"},{brand:"Apple"}]})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded6'),
+  name: 'Bluetooth Speaker',
+  category: 'Electronics',
+  price: 2500,
+  stock: 60,
+  brand: 'JBL'
+}
+db.products.find({$or:[{price:{$gt:5000}},{brand:"Samsung"}]})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecd'),
+  name: 'iPhone 14',
+  category: 'Electronics',
+  price: 75000,
+  stock: 25,
+  brand: 'Apple'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdece'),
+  name: 'Samsung Galaxy S22',
+  category: 'Electronics',
+  price: 65000,
+  stock: 30,
+  brand: 'Samsung'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cdecf'),
+  name: 'Dell Laptop',
+  category: 'Computers',
+  price: 55000,
+  stock: 15,
+  brand: 'Dell'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded0'),
+  name: 'HP Pavilion Laptop',
+  category: 'Computers',
+  price: 50000,
+  stock: 12,
+  brand: 'HP'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded4'),
+  name: 'Wooden Dining Table',
+  category: 'Furniture',
+  price: 20000,
+  stock: 5,
+  brand: 'IKEA'
+}
+db.products.find({price: {
+    $gte: 5000,
+    $lte: 20000
+  }
+})
+db.products.find({
+  price: {
+    $not: { $gt: 5000 }
+  }
+})
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded1'),
+  name: 'Nike Shoes',
+  category: 'Fashion',
+  price: 5000,
+  stock: 50,
+  brand: 'Nike'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded2'),
+  name: 'Adidas T-shirt',
+  category: 'Fashion',
+  price: 1500,
+  stock: 80,
+  brand: 'Adidas'
+}
+{
+  _id: ObjectId('6a0fe968641c70a2db4cded3'),
+  name: 'Sony Headphones',
+  category: 'Electronics',
+  price: 3000,
+  stock: 40,
+  brand: 'Sony'
+}
+db.products.find().limit(5)
+db.products.find().skip(5).limit(5)
+db.products.find().sort({ price: 1 })
+db.products.find().sort({ price: -1 })
+db.products.updateOne(
+  { _id: ObjectId("6a0fe968641c70a2db4cdece") },
+  {
+    $set: { name: "New Product Name" }
+  }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.updateMany(
+  { price: { $lt: 5000 } },
+  {
+    $set: { stock: 50 }
+  }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+db.products.updateOne(
+  { category: "Electronics" },
+  {
+    $set: { price: 15000 }
+  }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.updateMany(
+  { category: "Electronics" },
+  {
+    $set: { stock: 100 }
+  }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+db.products.replaceOne(
+  { _id: ObjectId("6a0fe968641c70a2db4cded0") },
+  {
+    name: "Laptop",
+    category: "Electronics",
+    price: 45000,
+    stock: 20
+  }
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.deleteOne({
+  name: "Laptop"
+})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.products.deleteOne({
+  price: { $lt: 2000 }
+})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.products.deleteMany({})
+{
+  acknowledged: true,
+  deletedCount: 8
+}
+db.products.find(
+  {},
+  {
+    name: 1,
+    price: 1
+  }
+)

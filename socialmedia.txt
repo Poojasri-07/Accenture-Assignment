@@ -1,0 +1,176 @@
+1. setupReplica.js
+
+rs.initiate({
+  _id: "socialMediaReplicaSet",
+  members: [
+    { _id: 0, host: "localhost:27017" },
+    { _id: 1, host: "localhost:27018" },
+    { _id: 2, host: "localhost:27019" }
+  ]
+})
+
+rs.status()
+
+2. insertUsers.js
+
+use socialMediaDB
+
+db.users.insertMany([
+  {
+    userId: "U101",
+    username: "pooja",
+    email: "pooja@gmail.com",
+    bio: "Tech Lover",
+    followersCount: 120,
+    followingCount: 80,
+    createdAt: new Date()
+  },
+  {
+    userId: "U102",
+    username: "rahul",
+    email: "rahul@gmail.com",
+    bio: "Photographer",
+    followersCount: 200,
+    followingCount: 150,
+    createdAt: new Date()
+  }
+])
+
+3. insertPosts.js
+
+use socialMediaDB
+
+db.posts.insertMany([
+  {
+    postId: "P101",
+    userId: "U101",
+    caption: "Enjoying MongoDB",
+    hashtags: ["#mongodb", "#database"],
+    likesCount: 50,
+    createdAt: new Date()
+  },
+  {
+    postId: "P102",
+    userId: "U102",
+    caption: "Beautiful Sunset",
+    hashtags: ["#sunset", "#nature"],
+    likesCount: 75,
+    createdAt: new Date()
+  }
+])
+
+
+4. insertComments.js
+
+use socialMediaDB
+
+db.comments.insertMany([
+  {
+    commentId: "C101",
+    postId: "P101",
+    userId: "U102",
+    commentText: "Nice Post!",
+    commentedAt: new Date()
+  },
+  {
+    commentId: "C102",
+    postId: "P102",
+    userId: "U101",
+    commentText: "Amazing Picture!",
+    commentedAt: new Date()
+  }
+])
+
+
+5. insertFollowers.js
+
+db.followers.insertMany([
+  {
+    followId: "F101",
+    followerId: "U101",
+    followingId: "U102",
+    followedAt: new Date()
+  },
+  {
+    followId: "F102",
+    followerId: "U102",
+    followingId: "U101",
+    followedAt: new Date()
+  }
+])
+
+6. insertActivityLogs.js
+
+db.activity_logs.insertMany([
+  {
+    activityId: "A101",
+    userId: "U101",
+    activityType: "Login",
+    device: "Mobile",
+    activityTime: new Date()
+  },
+  {
+    activityId: "A102",
+    userId: "U102",
+    activityType: "Post",
+    device: "Laptop",
+    activityTime: new Date()
+  }
+])
+
+
+7. updateData.js
+
+db.users.updateOne(
+  { userId: "U101" },
+  { $set: { bio: "MongoDB Developer" } }
+)
+
+// Update caption
+db.posts.updateOne(
+  { postId: "P101" },
+  { $set: { caption: "Learning Replica Sets" } }
+)
+
+// Update likes count
+db.posts.updateOne(
+  { postId: "P102" },
+  { $set: { likesCount: 100 } }
+)
+
+
+8. deleteData.js
+
+// Delete inactive user
+db.users.deleteOne({ userId: "U102" })
+
+// Delete unwanted comment
+db.comments.deleteOne({ commentId: "C102" })
+
+// Delete post
+db.posts.deleteOne({ postId: "P102" })
+
+
+9.failoverDemo.js
+
+rs.status()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
